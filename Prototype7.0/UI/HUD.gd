@@ -27,9 +27,6 @@ func _ready():
 	#$Margin/HBoxContainer/SpriteAuxRpm2.set_visible(false)
 	pass
 	
-func dano(dano):
-	$LifeBar/Control/ProgressBar.value -= dano
-	
 func _process(delta):
 	rpm = $SliderRpm.value
 	rpm2 = $SliderRpm2.value

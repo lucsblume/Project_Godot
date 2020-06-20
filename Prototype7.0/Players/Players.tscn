@@ -1,13 +1,24 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Players/Players.gd" type="Script" id=1]
 [ext_resource path="res://Jogadores/Player.gd" type="Script" id=2]
-[ext_resource path="res://cataputa_base.png" type="Texture" id=3]
-[ext_resource path="res://Ball.png" type="Texture" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://cataputa_braco.png" type="Texture" id=6]
-[ext_resource path="res://Players/Ball1.gd" type="Script" id=7]
-[ext_resource path="res://Players/Trail.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Players/areaDanoPlayer1.gd" type="Script" id=3]
+[ext_resource path="res://cataputa_base.png" type="Texture" id=4]
+[ext_resource path="res://Ball.png" type="Texture" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://cataputa_braco.png" type="Texture" id=7]
+[ext_resource path="res://Players/Ball1.gd" type="Script" id=8]
+[ext_resource path="res://Players/Trail.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Players/Area2D.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 59.3364, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 33.2347 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 61.869, 6.77072 )
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonte/arialbi.ttf"
@@ -50,42 +61,52 @@ colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 1 )
 [sub_resource type="CircleShape2D" id=5]
 radius = 11.4563
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 59.3364, 10 )
+[sub_resource type="CircleShape2D" id=9]
+radius = 11.3792
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 10, 33.2347 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 61.869, 6.77072 )
-
-[node name="Settings" type="Node2D" groups=[
-"Player1",
-]]
+[node name="Settings" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 499.273, 203.981 )
 script = ExtResource( 2 )
 
+[node name="areaDanoPlayer1" type="Area2D" parent="Player"]
+position = Vector2( -499.273, -203.981 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/areaDanoPlayer1"]
+position = Vector2( 498.703, 311.377 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/areaDanoPlayer1"]
+position = Vector2( 496.794, 267.113 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player/areaDanoPlayer1"]
+position = Vector2( 499.809, 235.242 )
+shape = SubResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/areaDanoPlayer1"]
+polygon = PoolVector2Array( 522.713, 226.587, 514.496, 218.196, 514.496, 216.622, 520.79, 216.622, 521.839, 211.552, 526.384, 206.657, 532.503, 204.734, 538.971, 206.482, 542.817, 210.503, 544.391, 214.874, 544.74, 217.147, 551.384, 217.147, 551.384, 219.594, 542.817, 227.286 )
+
 [node name="Sprite" type="Sprite" parent="Player"]
 position = Vector2( -0.41687, 59.0078 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Wheel1" type="Sprite" parent="Player/Sprite"]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -35.6016, 55.7559 )
 rotation = -0.0174533
 scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Wheel2" type="Sprite" parent="Player/Sprite"]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 33.0781, 55.248 )
 rotation = -0.0174533
 scale = Vector2( 0.0152699, 0.0146933 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Camera2DP1" type="Camera2D" parent="Player"]
 position = Vector2( 0.630616, -0.219498 )
@@ -97,7 +118,7 @@ limit_top = 0
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -0.416948, 141.019 )
 scale = Vector2( 2, 0.46875 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="distancePixels" type="Label" parent="Player"]
 margin_left = -169.273
@@ -121,13 +142,13 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 532.935, 217.298 )
 rotation = -0.0174533
 scale = Vector2( 0.019222, 0.0191504 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
 position = Vector2( 498, 235 )
 rotation = -6.28319
 scale = Vector2( 1.08109, 0.983325 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 2.92465, 32.1542 )
 
 [node name="AuxSprite" type="Sprite" parent="AnimationPlayer/Sprite"]
@@ -136,15 +157,14 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 32.3147, -18.0024 )
 rotation = -0.0191879
 scale = Vector2( 0.0177808, 0.0194746 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Ball1" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 visible = false
 position = Vector2( 363.221, 285.679 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
-[node name="Trail" parent="Ball1" instance=ExtResource( 8 )]
+[node name="Trail" parent="Ball1" instance=ExtResource( 9 )]
 width = 20.0
 gradient = SubResource( 4 )
 targetPath = NodePath("..")
@@ -154,7 +174,7 @@ trailLength = 15
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( -1.78906, -0.414551 )
 scale = Vector2( 0.018, 0.019 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball1"]
 position = Vector2( -1.15668, -0.666687 )
@@ -168,24 +188,18 @@ rotation = 0.962018
 scale = Vector2( 1.08109, 0.983325 )
 zoom = Vector2( 0.7, 0.7 )
 
+[node name="AreaDanoP1" type="Area2D" parent="Ball1"]
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball1/AreaDanoP1"]
+position = Vector2( -1.44159, -0.772552 )
+shape = SubResource( 9 )
+
 [node name="AuxSprite2" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 568.532, 243.246 )
 rotation = -2.61799
 scale = Vector2( 0.019222, 0.0191504 )
-texture = ExtResource( 4 )
-
-[node name="areaDanoPlayer1" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="areaDanoPlayer1"]
-position = Vector2( 498.703, 311.377 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="areaDanoPlayer1"]
-position = Vector2( 496.794, 267.113 )
-shape = SubResource( 7 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="areaDanoPlayer1"]
-position = Vector2( 499.809, 235.242 )
-shape = SubResource( 8 )
+texture = ExtResource( 5 )
+[connection signal="area_entered" from="Ball1/AreaDanoP1" to="Ball1/AreaDanoP1" method="_on_Area2D_area_entered"]

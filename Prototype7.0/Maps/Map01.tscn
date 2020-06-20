@@ -357,6 +357,7 @@ font_data = SubResource( 28 )
 script = ExtResource( 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Layer0" type="ParallaxLayer" parent="ParallaxBackground"]
 editor/display_folded = true

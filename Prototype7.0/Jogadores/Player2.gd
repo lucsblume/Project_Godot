@@ -11,17 +11,6 @@ export(int) var gravity = 1200
 
 var velocity = Vector2()
 var jumping = false
-var areaDetectavel = false
-var objetoPersonagem
-
-func _ready():
-	$Ball2/areaInimigoP2.connect("body_entered", self, "entrouAreaPersonagem1")
-	
-func entrouAreaPersonagem1(body):
-	if(body.is_in_group("Player1")):
-		objetoPersonagem = body
-		body.objetoInimigo = self
-		areaDetectavel = true
 
 func get_input():
 	velocity.x = 0
@@ -31,7 +20,6 @@ func get_input():
 	
 	if Game_Manager.stamina_p2 <= 0: #checando valor da stamina
 		return
-	
 	
 	if jump and is_on_floor():
 		print("Is on Floor")

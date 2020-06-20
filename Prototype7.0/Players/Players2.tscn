@@ -1,13 +1,15 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Players/Players2.gd" type="Script" id=1]
 [ext_resource path="res://Jogadores/Player2.gd" type="Script" id=2]
 [ext_resource path="res://Base.png" type="Texture" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://Arm.png" type="Texture" id=5]
-[ext_resource path="res://Ball.png" type="Texture" id=6]
-[ext_resource path="res://Players/Ball2.gd" type="Script" id=7]
-[ext_resource path="res://Players/Trail.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Players/areaDanoPlayer2.gd" type="Script" id=5]
+[ext_resource path="res://Arm.png" type="Texture" id=6]
+[ext_resource path="res://Ball.png" type="Texture" id=7]
+[ext_resource path="res://Players/Ball2.gd" type="Script" id=8]
+[ext_resource path="res://Players/Trail.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Players/areaDanoP2.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 54.7006, 10 )
@@ -19,6 +21,15 @@ font_path = "res://Fonte/arialbi.ttf"
 size = 20
 use_filter = true
 font_data = SubResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 63.275, 9.05066 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 51.0869 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 56.3257, 10 )
 
 [sub_resource type="Animation" id=4]
 length = 6.0
@@ -57,9 +68,6 @@ radius = 9.68246
 [sub_resource type="CircleShape2D" id=7]
 radius = 10.6754
 
-[sub_resource type="CircleShape2D" id=8]
-radius = 80.4107
-
 [node name="SettingsP2" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -92,27 +100,42 @@ custom_fonts/font = SubResource( 3 )
 align = 1
 uppercase = true
 
+[node name="areaDanoPlayer2" type="Area2D" parent="Player2"]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/areaDanoPlayer2"]
+position = Vector2( -0.463257, -1.38986 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player2/areaDanoPlayer2"]
+position = Vector2( 0, 41.2329 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player2/areaDanoPlayer2"]
+position = Vector2( -2.31653, 88.9519 )
+shape = SubResource( 10 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ArmAnimation = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
 position = Vector2( 1435.72, 308.838 )
 rotation = 0.0174533
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 flip_h = true
 
 [node name="AuxSprite" type="Sprite" parent="AnimationPlayer/Sprite"]
 position = Vector2( -44.624, -11.2155 )
 rotation = 2.45151
 scale = Vector2( 0.0177983, 0.0176679 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Ball2" type="KinematicBody2D" parent="."]
 visible = false
 position = Vector2( 1477.45, 288.212 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
-[node name="Trail" parent="Ball2" instance=ExtResource( 8 )]
+[node name="Trail" parent="Ball2" instance=ExtResource( 9 )]
 width = 20.0
 gradient = SubResource( 5 )
 targetPath = NodePath("..")
@@ -122,7 +145,7 @@ trailLength = 15
 position = Vector2( 0.195115, -1.78778 )
 rotation = 2.21497
 scale = Vector2( 0.0176852, 0.0175556 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2"]
 position = Vector2( -0.237915, -0.237823 )
@@ -131,15 +154,10 @@ shape = SubResource( 6 )
 [node name="Camera2D" type="Camera2D" parent="Ball2"]
 zoom = Vector2( 0.7, 0.7 )
 
-[node name="areaDanoP2" type="Area2D" parent="Ball2" groups=[
-"danoPlayer2",
-]]
+[node name="areaDanoP2" type="Area2D" parent="Ball2"]
+script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2/areaDanoP2"]
 position = Vector2( 0.524536, -1.39859 )
 shape = SubResource( 7 )
-
-[node name="areaInimigoP2" type="Area2D" parent="Ball2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2/areaInimigoP2"]
-shape = SubResource( 8 )
+[connection signal="area_entered" from="Ball2/areaDanoP2" to="." method="_on_areaDanoP2_area_entered"]

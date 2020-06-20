@@ -5,7 +5,7 @@ var conversaoRad; var conversaoRadP2; var posXInicial; var posXInicialP2; var po
 var posInicialBola; var posInicialBolaP2; var velocidadeInicialX; var velocidadeInicialY; var posLancamento = Vector2(); var aceleracaoXP2; var aceleracaoYP2
 var aceleracaoX; var aceleracaoY; const GRAVIDADE = 98; var aceleracao; var velocidadeP2; var velocidadeInicialXP2; var velocidadeInicialYP2
 var aux = 0; var auxP2 = 0; var posInicialKinematic = Vector2(); var signalFlag = false; var signalFlagP2 = false; var posLancamentoP2; var aceleracaoP2
-var lock = false; var lockP2 = false; var hp = 100; var objetoInimigo
+var lock = false; var lockP2 = false
 
 onready var label = $Settings/Player/distancePixels
 onready var label2 = $SettingsP2/Player2/distancePixels2
@@ -38,8 +38,6 @@ func _ready():
 
 	$Settings/Ball1.connect("is_on_floor", self, "isTrue")
 	$SettingsP2/Ball2.connect("is_on_floorP2", self, "isTrueP2")
-	$Settings/areaDanoPlayer1.connect("area_entered", self, "on_areaDanoP1")
-	$Settings.connect("levarDano", $HUD, "dano")
 
 	$X.visible = false
 	$Y.visible = false
@@ -150,7 +148,7 @@ func _process(delta):
 			aceleracao = Vector2(-aceleracaoX * delta, aceleracaoY * delta)
 			$Settings/Ball1.set_position(aceleracao + posKinematic)
 			#print("fora ", aceleracao)
-			print("Conversão para radianos do ângulo 1: ", conversaoRad)
+			#print("Conversão para radianos do ângulo 1: ", conversaoRad)
 			anim.stop(false)
 			if(lock == true):
 				posInicial = Vector2(46, 0)
@@ -231,9 +229,9 @@ func _process(delta):
 			#anguloArremessoP2 = 90 - anguloArremessoP2
 			#anguloArremessoP2 = 90 - (anguloArremessoP2 - 180)
 			anguloArremessoP2 = anguloArremessoP2 - 270
-			print("Angulo de arremesso: ", anguloArremessoP2)
+			#print("Angulo de arremesso: ", anguloArremessoP2)
 			conversaoRadAnguloArremessoP2 = deg2rad(-anguloArremessoP2)
-			print("Conversão para radianos do ângulo 2: ", conversaoRadAnguloArremessoP2)
+			#print("Conversão para radianos do ângulo 2: ", conversaoRadAnguloArremessoP2)
 			velocidadeInicialXP2 = velocidadeP2 * cos(conversaoRadAnguloArremessoP2)
 			velocidadeInicialYP2 = velocidadeP2 * sin(conversaoRadAnguloArremessoP2)
 			aceleracaoXP2 = (velocidadeInicialXP2) * 3
@@ -330,9 +328,3 @@ func isTrueP2():
 	$SettingsP2/AnimationPlayer/Sprite/AuxSprite.set_visible(true)
 	$SettingsP2/Ball2.set_visible(false)
 	$Settings/Player/Camera2DP1.make_current()
-	
-func _on_areaDanoP1(area):
-	if(area.is_in_group("danoPlayer2")):
-		hp -= 10
-		print("Hp: ", hp)
-		emit_signal("levarDano", 10)
