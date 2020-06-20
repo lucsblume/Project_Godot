@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Terrains/terrain.gd" type="Script" id=1]
+[ext_resource path="res://Terrains/Tileset 128px.png" type="Texture" id=2]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="SpriteTerrain" type="Sprite" parent="."]
+texture = ExtResource( 2 )

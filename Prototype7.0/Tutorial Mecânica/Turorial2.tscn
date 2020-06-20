@@ -1,0 +1,143 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Backgrounds/headed_home_bg.jpg" type="Texture" id=1]
+[ext_resource path="res://TutorialScene/voltar.gd" type="Script" id=2]
+[ext_resource path="res://Button Sprite/Button-PNG-Picture.png" type="Texture" id=3]
+[ext_resource path="res://Sprite status/chevron.png" type="Texture" id=4]
+[ext_resource path="res://Sprite status/dashboard.png" type="Texture" id=5]
+[ext_resource path="res://Musicas/mamorukun curse ost 03 fine day player select.wav" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonte/arialbi.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 56
+outline_size = 3
+outline_color = Color( 0.356863, 0.356863, 0.356863, 1 )
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Fonte/arialbi.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+use_filter = true
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Fonte/arialbi.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 38
+use_filter = true
+font_data = SubResource( 5 )
+
+[node name="Tutorial2" type="Node2D"]
+
+[node name="bacground" type="Sprite" parent="."]
+modulate = Color( 0.643137, 0.643137, 0.643137, 1 )
+position = Vector2( 638.491, 355.747 )
+scale = Vector2( 1.645, 1.243 )
+texture = ExtResource( 1 )
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="TituloGame" type="Label" parent="Menu"]
+margin_left = 450.583
+margin_top = 11.0
+margin_right = 757.583
+margin_bottom = 140.0
+rect_scale = Vector2( 1.27727, 1.27727 )
+custom_fonts/font = SubResource( 2 )
+text = "MECÂNICA
+"
+align = 1
+valign = 1
+
+[node name="voltar" type="Button" parent="Menu"]
+margin_left = 480.0
+margin_top = 550.0
+margin_right = 760.0
+margin_bottom = 605.0
+rect_scale = Vector2( 1.2139, 1.2139 )
+text = "START"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ButtonSprite" type="Sprite" parent="Menu/voltar"]
+position = Vector2( 145, 30 )
+scale = Vector2( 0.137309, 0.0940959 )
+texture = ExtResource( 3 )
+
+[node name="SairLabel" type="Label" parent="Menu/voltar"]
+margin_left = 59.0
+margin_top = 7.0
+margin_right = 207.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 4 )
+text = "VOLTAR"
+
+[node name="AnguloLabel" type="Label" parent="Menu"]
+margin_left = 347.0
+margin_top = 160.0
+margin_right = 490.0
+margin_bottom = 204.0
+rect_scale = Vector2( 1.30651, 1.30651 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.356863, 0.894118, 0.207843, 1 )
+text = "Ângulo"
+
+[node name="angulo" type="Sprite" parent="Menu/AnguloLabel"]
+position = Vector2( 67.6691, 101.027 )
+scale = Vector2( 1.38524, 1.38524 )
+texture = ExtResource( 4 )
+
+[node name="RpmLabel" type="Label" parent="Menu"]
+margin_left = 827.0
+margin_top = 161.0
+margin_right = 911.0
+margin_bottom = 205.0
+rect_scale = Vector2( 1.28189, 1.28189 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.356863, 0.894118, 0.207843, 1 )
+text = "Rpm"
+
+[node name="Rpm" type="Sprite" parent="Menu/RpmLabel"]
+position = Vector2( 38.1234, 101.027 )
+scale = Vector2( 1.38524, 1.38524 )
+texture = ExtResource( 5 )
+
+[node name="descriçãoAnguloLabel" type="Label" parent="Menu"]
+margin_left = 298.0
+margin_top = 368.0
+margin_right = 595.0
+margin_bottom = 506.0
+rect_scale = Vector2( 0.827017, 0.827017 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.894118, 0.207843, 0.85098, 1 )
+text = "O ângulo pode
+variar de 0 a 360
+graus."
+align = 1
+
+[node name="descriçãoRPMLabel3" type="Label" parent="Menu"]
+margin_left = 721.0
+margin_top = 369.305
+margin_right = 1098.0
+margin_bottom = 501.305
+rect_scale = Vector2( 0.827017, 0.827017 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.894118, 0.207843, 0.85098, 1 )
+text = "Rotações por
+minuto(variante)."
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+[connection signal="mouse_entered" from="Menu/voltar" to="Menu/voltar" method="_on_voltar_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/voltar" to="Menu/voltar" method="_on_voltar_mouse_exited"]
+[connection signal="pressed" from="Menu/voltar" to="Menu/voltar" method="_on_voltar_pressed"]

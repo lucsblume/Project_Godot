@@ -1,0 +1,145 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Players/Players2.gd" type="Script" id=1]
+[ext_resource path="res://Jogadores/Player2.gd" type="Script" id=2]
+[ext_resource path="res://Base.png" type="Texture" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Arm.png" type="Texture" id=5]
+[ext_resource path="res://Ball.png" type="Texture" id=6]
+[ext_resource path="res://Players/Ball2.gd" type="Script" id=7]
+[ext_resource path="res://Players/Trail.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 54.7006, 10 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Fonte/arialbi.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+use_filter = true
+font_data = SubResource( 2 )
+
+[sub_resource type="Animation" id=4]
+length = 6.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1435.72, 308.838 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0 ]
+}
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0.0546875, 0, 1, 0, 0, 0.203125, 1, 1 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 9.68246
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 10.6754
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 80.4107
+
+[node name="SettingsP2" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Player2" type="KinematicBody2D" parent="."]
+position = Vector2( 1435.72, 308.838 )
+script = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Player2"]
+position = Vector2( -2.09497, 50.9786 )
+texture = ExtResource( 3 )
+
+[node name="Camera2DP2" type="Camera2D" parent="Player2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2( -2.95154, 102.707 )
+shape = SubResource( 1 )
+
+[node name="BoxBlack2" type="Sprite" parent="Player2"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -0.416992, 141.019 )
+scale = Vector2( 2, 0.46875 )
+texture = ExtResource( 4 )
+
+[node name="distancePixels2" type="Label" parent="Player2"]
+margin_left = -142.0
+margin_top = 125.0
+margin_right = 139.0
+margin_bottom = 173.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ArmAnimation = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+position = Vector2( 1435.72, 308.838 )
+rotation = 0.0174533
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="AuxSprite" type="Sprite" parent="AnimationPlayer/Sprite"]
+position = Vector2( -44.624, -11.2155 )
+rotation = 2.45151
+scale = Vector2( 0.0177983, 0.0176679 )
+texture = ExtResource( 6 )
+
+[node name="Ball2" type="KinematicBody2D" parent="."]
+visible = false
+position = Vector2( 1477.45, 288.212 )
+script = ExtResource( 7 )
+
+[node name="Trail" parent="Ball2" instance=ExtResource( 8 )]
+width = 20.0
+gradient = SubResource( 5 )
+targetPath = NodePath("..")
+trailLength = 15
+
+[node name="Sprite2" type="Sprite" parent="Ball2"]
+position = Vector2( 0.195115, -1.78778 )
+rotation = 2.21497
+scale = Vector2( 0.0176852, 0.0175556 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2"]
+position = Vector2( -0.237915, -0.237823 )
+shape = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="Ball2"]
+zoom = Vector2( 0.7, 0.7 )
+
+[node name="areaDanoP2" type="Area2D" parent="Ball2" groups=[
+"danoPlayer2",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2/areaDanoP2"]
+position = Vector2( 0.524536, -1.39859 )
+shape = SubResource( 7 )
+
+[node name="areaInimigoP2" type="Area2D" parent="Ball2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2/areaInimigoP2"]
+shape = SubResource( 8 )

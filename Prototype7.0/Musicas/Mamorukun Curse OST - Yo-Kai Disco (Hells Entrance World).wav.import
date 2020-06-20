@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mamorukun Curse OST - Yo-Kai Disco (Hells Entrance World).wav-9517d90a3f3da128f359b56dba7358e2.sample"
+
+[deps]
+
+source_file="res://Musicas/Mamorukun Curse OST - Yo-Kai Disco (Hells Entrance World).wav"
+dest_files=[ "res://.import/Mamorukun Curse OST - Yo-Kai Disco (Hells Entrance World).wav-9517d90a3f3da128f359b56dba7358e2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,191 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Players/Players.gd" type="Script" id=1]
+[ext_resource path="res://Jogadores/Player.gd" type="Script" id=2]
+[ext_resource path="res://cataputa_base.png" type="Texture" id=3]
+[ext_resource path="res://Ball.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://cataputa_braco.png" type="Texture" id=6]
+[ext_resource path="res://Players/Ball1.gd" type="Script" id=7]
+[ext_resource path="res://Players/Trail.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonte/arialbi.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 498, 235 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.001, 1.002, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -1.0, -30.0, -60.0, 0.0, -60.0, -90.0, -120.0, -150.0, -180.0, -210.0, -240.0, -270.0, -300.0, -330.0, -360.0 ]
+}
+
+[sub_resource type="Gradient" id=4]
+colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 1 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 11.4563
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 59.3364, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 33.2347 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 61.869, 6.77072 )
+
+[node name="Settings" type="Node2D" groups=[
+"Player1",
+]]
+script = ExtResource( 1 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 499.273, 203.981 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( -0.41687, 59.0078 )
+texture = ExtResource( 3 )
+
+[node name="Wheel1" type="Sprite" parent="Player/Sprite"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -35.6016, 55.7559 )
+rotation = -0.0174533
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 4 )
+
+[node name="Wheel2" type="Sprite" parent="Player/Sprite"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 33.0781, 55.248 )
+rotation = -0.0174533
+scale = Vector2( 0.0152699, 0.0146933 )
+texture = ExtResource( 4 )
+
+[node name="Camera2DP1" type="Camera2D" parent="Player"]
+position = Vector2( 0.630616, -0.219498 )
+current = true
+limit_left = 0
+limit_top = 0
+
+[node name="BoxBlack" type="Sprite" parent="Player"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -0.416948, 141.019 )
+scale = Vector2( 2, 0.46875 )
+texture = ExtResource( 5 )
+
+[node name="distancePixels" type="Label" parent="Player"]
+margin_left = -169.273
+margin_top = 129.019
+margin_right = 170.727
+margin_bottom = 177.019
+custom_fonts/font = SubResource( 2 )
+align = 1
+uppercase = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+visible = false
+position = Vector2( -46.0273, 98.3722 )
+polygon = PoolVector2Array( -11.4895, -0.863495, -13.5328, -0.863495, -13.5328, 17.8673, 1.11127, 17.8673, 2.76755, 21.105, 5.96191, 23.7438, 10.8229, 24.6465, 16.2394, 22.4244, 19.1704, 18.4162, 68.7094, 18.4162, 70.6475, 19.7856, 73.3558, 22.4938, 79.6056, 24.0216, 85.4388, 21.5216, 88.2947, 18.2079, 103.961, 18.2079, 103.961, -1.88519 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/AnimationSprite = SubResource( 3 )
+
+[node name="AuxSprite" type="Sprite" parent="AnimationPlayer"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 532.935, 217.298 )
+rotation = -0.0174533
+scale = Vector2( 0.019222, 0.0191504 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+position = Vector2( 498, 235 )
+rotation = -6.28319
+scale = Vector2( 1.08109, 0.983325 )
+texture = ExtResource( 6 )
+offset = Vector2( 2.92465, 32.1542 )
+
+[node name="AuxSprite" type="Sprite" parent="AnimationPlayer/Sprite"]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 32.3147, -18.0024 )
+rotation = -0.0191879
+scale = Vector2( 0.0177808, 0.0194746 )
+texture = ExtResource( 4 )
+
+[node name="Ball1" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 363.221, 285.679 )
+script = ExtResource( 7 )
+
+[node name="Trail" parent="Ball1" instance=ExtResource( 8 )]
+width = 20.0
+gradient = SubResource( 4 )
+targetPath = NodePath("..")
+trailLength = 15
+
+[node name="Sprite" type="Sprite" parent="Ball1"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -1.78906, -0.414551 )
+scale = Vector2( 0.018, 0.019 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball1"]
+position = Vector2( -1.15668, -0.666687 )
+rotation = 0.962018
+scale = Vector2( 1.08109, 0.983325 )
+shape = SubResource( 5 )
+
+[node name="Camera2DB1" type="Camera2D" parent="Ball1"]
+position = Vector2( -0.230774, -0.0635376 )
+rotation = 0.962018
+scale = Vector2( 1.08109, 0.983325 )
+zoom = Vector2( 0.7, 0.7 )
+
+[node name="AuxSprite2" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 568.532, 243.246 )
+rotation = -2.61799
+scale = Vector2( 0.019222, 0.0191504 )
+texture = ExtResource( 4 )
+
+[node name="areaDanoPlayer1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areaDanoPlayer1"]
+position = Vector2( 498.703, 311.377 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="areaDanoPlayer1"]
+position = Vector2( 496.794, 267.113 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="areaDanoPlayer1"]
+position = Vector2( 499.809, 235.242 )
+shape = SubResource( 8 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Karakuri Spirits (MEIKAI ARRANGE).wav-7b447304c6c1f8375f917e170acd68f9.sample"
+
+[deps]
+
+source_file="res://Musicas/Karakuri Spirits (MEIKAI ARRANGE).wav"
+dest_files=[ "res://.import/Karakuri Spirits (MEIKAI ARRANGE).wav-7b447304c6c1f8375f917e170acd68f9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

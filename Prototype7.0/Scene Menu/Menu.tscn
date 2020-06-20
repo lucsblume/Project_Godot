@@ -1,0 +1,180 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scene Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Backgrounds/headed_home_bg.jpg" type="Texture" id=2]
+[ext_resource path="res://Scene Menu/Start.gd" type="Script" id=3]
+[ext_resource path="res://Button Sprite/Button-PNG-Picture.png" type="Texture" id=4]
+[ext_resource path="res://Scene Menu/Sair.gd" type="Script" id=5]
+[ext_resource path="res://Musicas/Karakuri Spirits (MEIKAI ARRANGE).wav" type="AudioStream" id=6]
+[ext_resource path="res://Scene Menu/AudioStreamPlayer.gd" type="Script" id=7]
+[ext_resource path="res://Scene Menu/Tutorial.gd" type="Script" id=8]
+[ext_resource path="res://Scene Menu/Tutorial2.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonte/arialbi.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 56
+outline_size = 3
+outline_color = Color( 0.356863, 0.356863, 0.356863, 1 )
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Fonte/arialbi.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+use_filter = true
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Fonte/arialbi.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 36
+font_data = SubResource( 5 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 638.491, 355.747 )
+scale = Vector2( 1.64457, 1.24343 )
+texture = ExtResource( 2 )
+
+[node name="TituloGame" type="Label" parent="."]
+margin_left = 387.501
+margin_top = 15.7581
+margin_right = 777.501
+margin_bottom = 154.758
+rect_scale = Vector2( 1.3219, 1.3219 )
+custom_fonts/font = SubResource( 2 )
+custom_constants/shadow_as_outline = 0
+text = "UNIBRAWL:
+Catapults"
+align = 1
+
+[node name="Start" type="Button" parent="."]
+editor/display_folded = true
+margin_left = 485.159
+margin_top = 247.383
+margin_right = 765.159
+margin_bottom = 302.383
+rect_scale = Vector2( 1.1903, 1.1903 )
+text = "START"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ButtonSprite" type="Sprite" parent="Start"]
+position = Vector2( 145, 30 )
+scale = Vector2( 0.137309, 0.0940959 )
+texture = ExtResource( 4 )
+
+[node name="ComeçarLabel" type="Label" parent="Start"]
+margin_left = 41.2941
+margin_top = 7.05878
+margin_right = 227.294
+margin_bottom = 48.0588
+custom_fonts/font = SubResource( 4 )
+text = "COMEÇAR"
+
+[node name="Sair" type="Button" parent="."]
+editor/display_folded = true
+margin_left = 486.15
+margin_top = 566.862
+margin_right = 766.15
+margin_bottom = 621.862
+rect_scale = Vector2( 1.18912, 1.18912 )
+text = "START"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ButtonSprite" type="Sprite" parent="Sair"]
+position = Vector2( 145, 30 )
+scale = Vector2( 0.137309, 0.0940959 )
+texture = ExtResource( 4 )
+
+[node name="SairLabel" type="Label" parent="Sair"]
+margin_left = 89.0
+margin_top = 7.0
+margin_right = 188.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 4 )
+text = "SAIR"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="Tutorial" type="Button" parent="."]
+editor/display_folded = true
+margin_left = 485.446
+margin_top = 355.67
+margin_right = 758.446
+margin_bottom = 410.67
+rect_scale = Vector2( 1.18116, 1.18116 )
+custom_fonts/font = SubResource( 6 )
+action_mode = 0
+text = "tutorial"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ButtonSprite" type="Sprite" parent="Tutorial"]
+position = Vector2( 145, 28.3858 )
+scale = Vector2( 0.137309, 0.097806 )
+texture = ExtResource( 4 )
+
+[node name="TurotialLabel" type="Label" parent="Tutorial"]
+margin_left = 42.2941
+margin_top = 5.05878
+margin_right = 228.294
+margin_bottom = 46.0588
+custom_fonts/font = SubResource( 4 )
+text = "TUTORIAL"
+
+[node name="Mecânica" type="Button" parent="."]
+editor/display_folded = true
+margin_left = 489.413
+margin_top = 461.125
+margin_right = 762.413
+margin_bottom = 516.125
+rect_scale = Vector2( 1.17462, 1.17462 )
+custom_fonts/font = SubResource( 6 )
+action_mode = 0
+text = "tutorial"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ButtonSprite" type="Sprite" parent="Mecânica"]
+position = Vector2( 145, 28.3858 )
+scale = Vector2( 0.137309, 0.097806 )
+texture = ExtResource( 4 )
+
+[node name="TurotialLabel" type="Label" parent="Mecânica"]
+margin_left = 37.2941
+margin_top = 5.05878
+margin_right = 247.294
+margin_bottom = 46.0588
+custom_fonts/font = SubResource( 4 )
+text = "MECÂNICA"
+[connection signal="mouse_entered" from="Start" to="Start" method="_on_Start_mouse_entered"]
+[connection signal="mouse_exited" from="Start" to="Start" method="_on_Start_mouse_exited"]
+[connection signal="pressed" from="Start" to="Start" method="_on_Start_pressed"]
+[connection signal="mouse_entered" from="Sair" to="Sair" method="_on_Start_mouse_entered"]
+[connection signal="mouse_exited" from="Sair" to="Sair" method="_on_Start_mouse_exited"]
+[connection signal="pressed" from="Sair" to="Sair" method="_on_Start_pressed"]
+[connection signal="mouse_entered" from="Tutorial" to="Tutorial" method="_on_Tutorial_mouse_entered"]
+[connection signal="mouse_exited" from="Tutorial" to="Tutorial" method="_on_Tutorial_mouse_exited"]
+[connection signal="pressed" from="Tutorial" to="Tutorial" method="_on_Tutorial_pressed"]
+[connection signal="mouse_entered" from="Mecânica" to="Mecânica" method="_on_Tutorial2_mouse_entered"]
+[connection signal="mouse_exited" from="Mecânica" to="Mecânica" method="_on_Tutorial2_mouse_exited"]
+[connection signal="pressed" from="Mecânica" to="Mecânica" method="_on_Tutorial2_pressed"]

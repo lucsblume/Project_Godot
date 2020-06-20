@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mamorukun curse ost 03 fine day player select.wav-3eebac45c49b06ad7fd415ce43ae466c.sample"
+
+[deps]
+
+source_file="res://Musicas/mamorukun curse ost 03 fine day player select.wav"
+dest_files=[ "res://.import/mamorukun curse ost 03 fine day player select.wav-3eebac45c49b06ad7fd415ce43ae466c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

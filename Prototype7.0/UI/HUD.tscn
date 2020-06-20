@@ -1,0 +1,433 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://UI/HUD.gd" type="Script" id=1]
+[ext_resource path="res://BarraDeStamina e label/Game.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprite status/flash 2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites Bars/bar4.png" type="Texture" id=4]
+[ext_resource path="res://BarraDeStamina e label/Game2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonte/consolaz.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/LabelAngle2.gd" type="Script" id=7]
+[ext_resource path="res://UI/LabelAngle1.gd" type="Script" id=8]
+[ext_resource path="res://UI/LabelRadius2.gd" type="Script" id=9]
+[ext_resource path="res://UI/LabelRadius1.gd" type="Script" id=10]
+[ext_resource path="res://UI/LabelRpm2.gd" type="Script" id=11]
+[ext_resource path="res://UI/LabelRpm1.gd" type="Script" id=12]
+[ext_resource path="res://Sprite status/chevron.png" type="Texture" id=13]
+[ext_resource path="res://Sprite status/pi.png" type="Texture" id=14]
+[ext_resource path="res://Sprite status/dashboard.png" type="Texture" id=15]
+[ext_resource path="res://UI/Pause.gd" type="Script" id=16]
+[ext_resource path="res://UI/ButtonExit.gd" type="Script" id=17]
+[ext_resource path="res://Button Sprite/Button-PNG-Picture.png" type="Texture" id=18]
+[ext_resource path="res://Fonte/arialbi.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://LifeBar/Lifeplayer1.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Sprite status/4-2-health-free-download-png-thumb.png" type="Texture" id=21]
+[ext_resource path="res://LifeBar/Lifeplayer2.tscn" type="PackedScene" id=22]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonte/consolaz.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 3
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 0.984314, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.937255, 0.156863, 0.156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 0.984314, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 0.984314, 0, 1 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://Fonte/consolaz.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 80
+outline_size = 3
+use_filter = true
+extra_spacing_char = 6
+font_data = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 36
+use_filter = true
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://Fonte/consolaz.ttf"
+
+[sub_resource type="DynamicFont" id=15]
+size = 22
+use_filter = true
+extra_spacing_char = 6
+font_data = SubResource( 14 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Margin" type="MarginContainer" parent="."]
+margin_right = 1022.0
+margin_bottom = 597.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin"]
+editor/display_folded = true
+margin_right = 1022.0
+margin_bottom = 597.0
+
+[node name="TextureRect" type="TextureRect" parent="Margin/HBoxContainer"]
+margin_bottom = 597.0
+
+[node name="Game" parent="Margin/HBoxContainer" instance=ExtResource( 2 )]
+editor/display_folded = true
+
+[node name="stamina" type="Sprite" parent="Margin/HBoxContainer/Game"]
+position = Vector2( 40.6401, 93.3751 )
+scale = Vector2( 0.556044, 0.556044 )
+texture = ExtResource( 3 )
+
+[node name="StaminaLabel" type="Label" parent="Margin/HBoxContainer/Game"]
+margin_left = 75.0
+margin_top = 91.411
+margin_right = 170.0
+margin_bottom = 116.411
+custom_fonts/font = SubResource( 2 )
+text = "STAMINA"
+align = 1
+valign = 1
+
+[node name="SpriteAuxRaio" type="Sprite" parent="Margin/HBoxContainer"]
+visible = false
+modulate = Color( 0.913725, 0.298039, 0.298039, 1 )
+position = Vector2( 185.621, 240.569 )
+scale = Vector2( 0.384929, 0.564603 )
+texture = ExtResource( 4 )
+
+[node name="SpriteAuxRaio2" type="Sprite" parent="Margin/HBoxContainer"]
+visible = false
+modulate = Color( 0.913725, 0.298039, 0.298039, 1 )
+position = Vector2( 830.621, 240.569 )
+scale = Vector2( 0.384929, 0.564603 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="SpriteAuxAnglo" type="Sprite" parent="Margin/HBoxContainer"]
+modulate = Color( 0.913725, 0.298039, 0.298039, 1 )
+position = Vector2( 165.959, 186.569 )
+scale = Vector2( 0.32396, 0.564603 )
+texture = ExtResource( 4 )
+
+[node name="SpriteAuxAnglo2" type="Sprite" parent="Margin/HBoxContainer"]
+modulate = Color( 0.913725, 0.298039, 0.298039, 1 )
+position = Vector2( 1114.71, 186.569 )
+scale = Vector2( 0.322168, 0.564603 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="SpriteAuxRpm" type="Sprite" parent="Margin/HBoxContainer"]
+modulate = Color( 0.913725, 0.298039, 0.298039, 1 )
+position = Vector2( 164.629, 251.569 )
+scale = Vector2( 0.322054, 0.564603 )
+texture = ExtResource( 4 )
+
+[node name="SpriteAuxRpm2" type="Sprite" parent="Margin/HBoxContainer"]
+modulate = Color( 0.913725, 0.298039, 0.298039, 1 )
+position = Vector2( 1114.51, 244.569 )
+scale = Vector2( 0.321103, 0.564603 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="Game2" parent="Margin/HBoxContainer" instance=ExtResource( 5 )]
+editor/display_folded = true
+
+[node name="stamina2" type="Sprite" parent="Margin/HBoxContainer/Game2"]
+position = Vector2( 1239.3, 92.1162 )
+scale = Vector2( 0.556, 0.556 )
+texture = ExtResource( 3 )
+
+[node name="StaminaLabel2" type="Label" parent="Margin/HBoxContainer/Game2"]
+margin_left = 1105.0
+margin_top = 92.411
+margin_right = 1200.0
+margin_bottom = 117.411
+custom_fonts/font = SubResource( 2 )
+text = "STAMINA"
+align = 1
+valign = 1
+
+[node name="LabelAngle2" type="Label" parent="."]
+margin_left = 1151.23
+margin_top = 154.661
+margin_right = 1199.23
+margin_bottom = 173.661
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+script = ExtResource( 7 )
+
+[node name="LabelAngle1" type="Label" parent="."]
+margin_left = 78.15
+margin_top = 156.25
+margin_right = 132.15
+margin_bottom = 175.25
+custom_fonts/font = SubResource( 4 )
+align = 1
+valign = 1
+script = ExtResource( 8 )
+
+[node name="LabelRadius2" type="Label" parent="."]
+visible = false
+margin_left = 830.099
+margin_top = 210.463
+margin_right = 880.099
+margin_bottom = 225.463
+script = ExtResource( 9 )
+
+[node name="LabelRadius1" type="Label" parent="."]
+visible = false
+margin_left = 171.95
+margin_top = 210.25
+margin_right = 223.95
+margin_bottom = 224.25
+script = ExtResource( 10 )
+
+[node name="LabelRpm2" type="Label" parent="."]
+margin_left = 1152.99
+margin_top = 213.504
+margin_right = 1197.99
+margin_bottom = 232.504
+custom_fonts/font = SubResource( 5 )
+align = 1
+valign = 1
+script = ExtResource( 11 )
+
+[node name="LabelRpm1" type="Label" parent="."]
+margin_left = 77.3
+margin_top = 221.35
+margin_right = 129.3
+margin_bottom = 240.35
+custom_fonts/font = SubResource( 6 )
+align = 1
+valign = 1
+script = ExtResource( 12 )
+
+[node name="SliderAngulo" type="HSlider" parent="."]
+editor/display_folded = true
+margin_left = 62.0
+margin_top = 139.0
+margin_right = 284.0
+margin_bottom = 155.0
+rect_scale = Vector2( 0.803397, 0.803397 )
+custom_styles/grabber_area = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+max_value = 360.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Angulo" type="Sprite" parent="SliderAngulo"]
+position = Vector2( -25.977, 19.3372 )
+scale = Vector2( 0.553385, 0.546858 )
+texture = ExtResource( 13 )
+
+[node name="SliderAngulo2" type="HSlider" parent="."]
+editor/display_folded = true
+margin_left = 1218.0
+margin_top = 138.0
+margin_right = 1441.0
+margin_bottom = 157.0
+rect_scale = Vector2( -0.796613, 0.803397 )
+custom_styles/grabber_area = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+max_value = 360.0
+ticks_on_borders = true
+
+[node name="Angulo" type="Sprite" parent="SliderAngulo2"]
+position = Vector2( -26.5131, 10.0199 )
+rotation = -3.14159
+scale = Vector2( 0.553, -0.547 )
+texture = ExtResource( 13 )
+
+[node name="SliderRaio" type="HSlider" parent="."]
+editor/display_folded = true
+visible = false
+margin_left = 62.0
+margin_top = 192.337
+margin_right = 322.0
+margin_bottom = 209.337
+rect_scale = Vector2( 0.816785, 0.816785 )
+custom_styles/grabber_area = SubResource( 9 )
+max_value = 50.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Raio" type="Sprite" parent="SliderRaio"]
+position = Vector2( -23.2744, 7.56984 )
+scale = Vector2( 0.574008, 0.57088 )
+texture = ExtResource( 14 )
+
+[node name="SliderRaio2" type="HSlider" parent="."]
+editor/display_folded = true
+visible = false
+margin_left = 954.0
+margin_top = 192.337
+margin_right = 1214.0
+margin_bottom = 209.337
+rect_scale = Vector2( -0.823215, 0.816785 )
+custom_styles/grabber_area = SubResource( 9 )
+max_value = 50.0
+ticks_on_borders = true
+
+[node name="Raio" type="Sprite" parent="SliderRaio2"]
+position = Vector2( -25.4969, 7.56984 )
+rotation = -3.14159
+scale = Vector2( 0.569524, -0.57088 )
+texture = ExtResource( 14 )
+
+[node name="SliderRpm" type="HSlider" parent="."]
+editor/display_folded = true
+margin_left = 61.1281
+margin_top = 204.439
+margin_right = 288.128
+margin_bottom = 220.439
+rect_scale = Vector2( 0.782912, 0.782912 )
+custom_styles/grabber_area = SubResource( 10 )
+max_value = 4.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Rpm" type="Sprite" parent="SliderRpm"]
+position = Vector2( -26.846, 7.74146 )
+scale = Vector2( 0.553, 0.547 )
+texture = ExtResource( 15 )
+
+[node name="SliderRpm2" type="HSlider" parent="."]
+editor/display_folded = true
+margin_left = 1218.0
+margin_top = 197.0
+margin_right = 1425.0
+margin_bottom = 213.0
+rect_scale = Vector2( -0.857088, 0.782912 )
+custom_styles/grabber_area = SubResource( 10 )
+max_value = 4.0
+ticks_on_borders = true
+
+[node name="Rpm" type="Sprite" parent="SliderRpm2"]
+position = Vector2( -24.4806, 8.17191 )
+rotation = -3.14159
+scale = Vector2( 0.518, -0.547 )
+texture = ExtResource( 15 )
+
+[node name="Pause" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="Pause"]
+margin_left = 495.133
+margin_top = 320.0
+margin_right = 789.133
+margin_bottom = 401.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "PAUSED"
+
+[node name="ButtonExit" type="Button" parent="Pause"]
+margin_left = 517.323
+margin_top = 425.834
+margin_right = 856.323
+margin_bottom = 505.834
+rect_scale = Vector2( 0.69978, 0.69978 )
+text = "SAIR"
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ButtonSprite" type="Sprite" parent="Pause/ButtonExit"]
+position = Vector2( 181.549, 42.9626 )
+scale = Vector2( 0.178715, 0.141256 )
+texture = ExtResource( 18 )
+
+[node name="Label" type="Label" parent="Pause/ButtonExit"]
+margin_left = 67.1664
+margin_top = 9.83365
+margin_right = 215.166
+margin_bottom = 50.8336
+rect_scale = Vector2( 1.40061, 1.40061 )
+custom_fonts/font = SubResource( 13 )
+text = "SAIR"
+align = 1
+valign = 1
+
+[node name="LifeBar" parent="." instance=ExtResource( 20 )]
+editor/display_folded = true
+
+[node name="health" type="Sprite" parent="LifeBar"]
+position = Vector2( 40.7799, 31.7799 )
+scale = Vector2( 0.217799, 0.217799 )
+texture = ExtResource( 21 )
+
+[node name="VidaLabelChar" type="Label" parent="LifeBar"]
+margin_left = 96.6732
+margin_top = 29.6732
+margin_right = 170.673
+margin_bottom = 56.6732
+custom_fonts/font = SubResource( 15 )
+text = "VIDA"
+
+[node name="LifeBar2" parent="." instance=ExtResource( 22 )]
+
+[node name="health2" type="Sprite" parent="LifeBar2"]
+position = Vector2( 1239, 32 )
+scale = Vector2( 0.218, 0.218 )
+texture = ExtResource( 21 )
+
+[node name="VidaLabelChar2" type="Label" parent="LifeBar2"]
+margin_left = 1108.0
+margin_top = 32.0
+margin_right = 1182.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 15 )
+text = "VIDA"
+align = 1
+valign = 1
+[connection signal="mouse_entered" from="Pause/ButtonExit" to="Pause/ButtonExit" method="_on_ButtonExit_mouse_entered"]
+[connection signal="mouse_exited" from="Pause/ButtonExit" to="Pause/ButtonExit" method="_on_ButtonExit_mouse_exited"]
+[connection signal="pressed" from="Pause/ButtonExit" to="Pause/ButtonExit" method="_on_ButtonExit_pressed"]
