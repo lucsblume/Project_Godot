@@ -397,7 +397,6 @@ align = 1
 valign = 1
 
 [node name="LifeBar" parent="." instance=ExtResource( 20 )]
-editor/display_folded = true
 
 [node name="health" type="Sprite" parent="LifeBar"]
 position = Vector2( 40.7799, 31.7799 )

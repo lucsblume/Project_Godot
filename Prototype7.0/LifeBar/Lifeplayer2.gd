@@ -10,7 +10,10 @@ func _input(event):
 	if event.is_action_pressed("life2"):#life = "l"
 		can -= 10
 		
+func validarDanoCausadoP2():
+	can -= 25
+		
 		
 func _physics_process(delta):
 	get_node("Control/ProgressBar").set_value(can)
-	can += delta * 2 #caso queira que a barra se recupere, basta comentar esse trecho
+	#can += delta * 2 #caso queira que a barra se recupere, basta comentar esse trecho

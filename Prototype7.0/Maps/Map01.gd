@@ -38,6 +38,8 @@ func _ready():
 
 	$Settings/Ball1.connect("is_on_floor", self, "isTrue")
 	$SettingsP2/Ball2.connect("is_on_floorP2", self, "isTrueP2")
+	$Settings/Player/areaDanoPlayer1.connect("causarDanoP1", $HUD/LifeBar, "validarDanoCausadoP1")
+	$SettingsP2/Player2/areaDanoPlayer2.connect("causarDanoP2", $HUD/LifeBar2, "validarDanoCausadoP2")
 
 	$X.visible = false
 	$Y.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Players/Players.gd" type="Script" id=1]
 [ext_resource path="res://Jogadores/Player.gd" type="Script" id=2]
@@ -10,15 +10,6 @@
 [ext_resource path="res://Players/Ball1.gd" type="Script" id=8]
 [ext_resource path="res://Players/Trail.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Players/Area2D.gd" type="Script" id=10]
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 59.3364, 10 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 10, 33.2347 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 61.869, 6.77072 )
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonte/arialbi.ttf"
@@ -61,7 +52,7 @@ colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 1 )
 [sub_resource type="CircleShape2D" id=5]
 radius = 11.4563
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=6]
 radius = 11.3792
 
 [node name="Settings" type="Node2D"]
@@ -75,22 +66,11 @@ script = ExtResource( 2 )
 position = Vector2( -499.273, -203.981 )
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/areaDanoPlayer1"]
-position = Vector2( 498.703, 311.377 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/areaDanoPlayer1"]
-position = Vector2( 496.794, 267.113 )
-shape = SubResource( 7 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player/areaDanoPlayer1"]
-position = Vector2( 499.809, 235.242 )
-shape = SubResource( 8 )
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/areaDanoPlayer1"]
-polygon = PoolVector2Array( 522.713, 226.587, 514.496, 218.196, 514.496, 216.622, 520.79, 216.622, 521.839, 211.552, 526.384, 206.657, 532.503, 204.734, 538.971, 206.482, 542.817, 210.503, 544.391, 214.874, 544.74, 217.147, 551.384, 217.147, 551.384, 219.594, 542.817, 227.286 )
+polygon = PoolVector2Array( 556.262, 320.656, 541.21, 321.074, 535.774, 326.509, 525.739, 326.091, 522.813, 320.656, 473.474, 320.656, 468.875, 325.673, 463.021, 327.346, 455.913, 323.582, 452.568, 321.074, 440.443, 321.074, 440.443, 301.004, 485.6, 301.004, 485.6, 242.049, 442.115, 242.049, 437.934, 239.958, 437.516, 231.596, 441.697, 227.833, 524.067, 227.833, 514.868, 216.479, 521.14, 216.479, 525.321, 206.444, 536.192, 205.189, 542.464, 209.371, 544.555, 216.479, 551.245, 216.897, 543.301, 226.932, 558.771, 226.932, 562.952, 230.695, 562.952, 239.475, 558.771, 242.82, 508.596, 242.82, 508.178, 300.939, 556.262, 301.069, 558.771, 308.595 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
+visible = false
 position = Vector2( -0.41687, 59.0078 )
 texture = ExtResource( 4 )
 
@@ -138,6 +118,7 @@ polygon = PoolVector2Array( -11.4895, -0.863495, -13.5328, -0.863495, -13.5328, 
 anims/AnimationSprite = SubResource( 3 )
 
 [node name="AuxSprite" type="Sprite" parent="AnimationPlayer"]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 532.935, 217.298 )
 rotation = -0.0174533
@@ -145,6 +126,7 @@ scale = Vector2( 0.019222, 0.0191504 )
 texture = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+visible = false
 position = Vector2( 498, 235 )
 rotation = -6.28319
 scale = Vector2( 1.08109, 0.983325 )
@@ -193,7 +175,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball1/AreaDanoP1"]
 position = Vector2( -1.44159, -0.772552 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 
 [node name="AuxSprite2" type="Sprite" parent="."]
 visible = false

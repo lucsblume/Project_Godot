@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Players/Players2.gd" type="Script" id=1]
 [ext_resource path="res://Jogadores/Player2.gd" type="Script" id=2]
@@ -21,15 +21,6 @@ font_path = "res://Fonte/arialbi.ttf"
 size = 20
 use_filter = true
 font_data = SubResource( 2 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 63.275, 9.05066 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 10, 51.0869 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 56.3257, 10 )
 
 [sub_resource type="Animation" id=4]
 length = 6.0
@@ -76,12 +67,14 @@ position = Vector2( 1435.72, 308.838 )
 script = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="Player2"]
+visible = false
 position = Vector2( -2.09497, 50.9786 )
 texture = ExtResource( 3 )
 
 [node name="Camera2DP2" type="Camera2D" parent="Player2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+visible = false
 position = Vector2( -2.95154, 102.707 )
 shape = SubResource( 1 )
 
@@ -103,22 +96,14 @@ uppercase = true
 [node name="areaDanoPlayer2" type="Area2D" parent="Player2"]
 script = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/areaDanoPlayer2"]
-position = Vector2( -0.463257, -1.38986 )
-shape = SubResource( 8 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player2/areaDanoPlayer2"]
-position = Vector2( 0, 41.2329 )
-shape = SubResource( 9 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player2/areaDanoPlayer2"]
-position = Vector2( -2.31653, 88.9519 )
-shape = SubResource( 10 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player2/areaDanoPlayer2"]
+polygon = PoolVector2Array( 61.4138, -8.05719, 60.9005, 7.34308, 10.0796, 6.31641, 10.0796, 79.211, 54.2271, 79.211, 54.2271, 98.2047, 51.147, 98.2047, 51.6604, 106.931, 46.527, 113.092, 36.7734, 114.118, 31.1267, 107.958, 29.0732, 99.2313, -33.0411, 99.2313, -35.6078, 110.012, -44.3346, 113.092, -53.5747, 111.552, -57.6815, 103.851, -56.1415, 99.2313, -62.3016, 99.2313, -61.2749, 78.1843, -10.9674, 78.6976, -10.9674, 4.26303, -62.8149, 5.2897, -61.7882, -10.1106, -56.6548, -10.1106, -49.468, -20.3774, -39.2012, -21.9174, -35.6078, -16.784, -33.0411, -11.1372 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ArmAnimation = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+visible = false
 position = Vector2( 1435.72, 308.838 )
 rotation = 0.0174533
 texture = ExtResource( 6 )

@@ -22,7 +22,7 @@ func get_input():
 		return
 	
 	if jump and is_on_floor():
-		print("Is on Floor")
+		#print("Is on Floor")
 		jumping = true
 		velocity.y = jump_speed
 		
