@@ -5,14 +5,14 @@
 [ext_resource path="res://UI/ButtonExit.gd" type="Script" id=3]
 [ext_resource path="res://Button Sprite/Button-PNG-Picture.png" type="Texture" id=4]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 56
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 56
 outline_size = 3
 outline_color = Color( 0.356863, 0.356863, 0.356863, 1 )
@@ -38,7 +38,7 @@ margin_top = 227.365
 margin_right = 688.657
 margin_bottom = 290.365
 rect_scale = Vector2( 1.61304, 1.61304 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.811765, 0.972549, 1 )
 text = "PLAYER 2"
 
@@ -48,7 +48,7 @@ margin_top = 33.3111
 margin_right = 626.572
 margin_bottom = 96.3111
 rect_scale = Vector2( 2.06036, 2.06036 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 text = "VITORIA !"
 
 [node name="ButtonExit" type="Button" parent="."]

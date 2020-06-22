@@ -13,7 +13,7 @@ func _input(event):
 func validarDanoCausadoP2():
 	can -= 25
 	if can <= 0:
-		get_tree().change_scene("VitoriaP1.tscn")
+		get_tree().change_scene("res://VitoriasScene/VitoriaP1.tscn")
 	
 func _physics_process(delta):
 	get_node("Control/ProgressBar").set_value(can)
