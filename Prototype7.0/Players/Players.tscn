@@ -70,6 +70,7 @@ script = ExtResource( 3 )
 polygon = PoolVector2Array( 556.262, 320.656, 541.21, 321.074, 535.774, 326.509, 525.739, 326.091, 522.813, 320.656, 473.474, 320.656, 468.875, 325.673, 463.021, 327.346, 455.913, 323.582, 452.568, 321.074, 440.443, 321.074, 440.443, 301.004, 485.6, 301.004, 485.6, 242.049, 442.115, 242.049, 437.934, 239.958, 437.516, 231.596, 441.697, 227.833, 524.067, 227.833, 514.868, 216.479, 521.14, 216.479, 525.321, 206.444, 536.192, 205.189, 542.464, 209.371, 544.555, 216.479, 551.245, 216.897, 543.301, 226.932, 558.771, 226.932, 562.952, 230.695, 562.952, 239.475, 558.771, 242.82, 508.596, 242.82, 508.178, 300.939, 556.262, 301.069, 558.771, 308.595 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
+visible = false
 position = Vector2( -0.41687, 59.0078 )
 texture = ExtResource( 4 )
 
@@ -117,6 +118,7 @@ polygon = PoolVector2Array( -11.4895, -0.863495, -13.5328, -0.863495, -13.5328, 
 anims/AnimationSprite = SubResource( 3 )
 
 [node name="AuxSprite" type="Sprite" parent="AnimationPlayer"]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 532.935, 217.298 )
 rotation = -0.0174533
@@ -124,6 +126,7 @@ scale = Vector2( 0.019222, 0.0191504 )
 texture = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+visible = false
 position = Vector2( 498, 235 )
 rotation = -6.28319
 scale = Vector2( 1.08109, 0.983325 )

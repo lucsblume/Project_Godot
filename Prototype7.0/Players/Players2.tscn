@@ -67,17 +67,12 @@ position = Vector2( 1435.72, 308.838 )
 script = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="Player2"]
-visible = false
 position = Vector2( -2.09497, 50.9786 )
 texture = ExtResource( 3 )
 
 [node name="Camera2DP2" type="Camera2D" parent="Player2"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player2"]
-polygon = PoolVector2Array( 61.4138, -8.05719, 60.9005, 7.34308, 10.0796, 6.31641, 10.0796, 79.211, 54.2271, 79.211, 54.2271, 98.2047, 51.147, 98.2047, 51.6604, 106.931, 46.527, 113.092, 36.7734, 114.118, 31.1267, 107.958, 29.0732, 99.2313, -33.0411, 99.2313, -35.6078, 110.012, -44.3346, 113.092, -53.5747, 111.552, -57.6815, 103.851, -56.1415, 99.2313, -62.3016, 99.2313, -61.2749, 78.1843, -10.9674, 78.6976, -10.9674, 4.26303, -62.8149, 5.2897, -61.7882, -10.1106, -56.6548, -10.1106, -49.468, -20.3774, -39.2012, -21.9174, -35.6078, -16.784, -33.0411, -11.1372 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
-visible = false
 position = Vector2( -2.95154, 102.707 )
 shape = SubResource( 1 )
 
@@ -99,6 +94,9 @@ uppercase = true
 [node name="areaDanoPlayer2" type="Area2D" parent="Player2"]
 script = ExtResource( 5 )
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player2/areaDanoPlayer2"]
+polygon = PoolVector2Array( 61.4138, -8.05719, 60.9005, 7.34308, 10.0796, 6.31641, 10.0796, 79.211, 54.2271, 79.211, 54.2271, 98.2047, 51.147, 98.2047, 51.6604, 106.931, 46.527, 113.092, 36.7734, 114.118, 31.1267, 107.958, 29.0732, 99.2313, -33.0411, 99.2313, -35.6078, 110.012, -44.3346, 113.092, -53.5747, 111.552, -57.6815, 103.851, -56.1415, 99.2313, -62.3016, 99.2313, -61.2749, 78.1843, -10.9674, 78.6976, -10.9674, 4.26303, -62.8149, 5.2897, -61.7882, -10.1106, -56.6548, -10.1106, -49.468, -20.3774, -39.2012, -21.9174, -35.6078, -16.784, -33.0411, -11.1372 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ArmAnimation = SubResource( 4 )
 
@@ -110,6 +108,7 @@ texture = ExtResource( 6 )
 flip_h = true
 
 [node name="AuxSprite" type="Sprite" parent="AnimationPlayer/Sprite"]
+visible = false
 position = Vector2( -44.624, -11.2155 )
 rotation = 2.45151
 scale = Vector2( 0.0177983, 0.0176679 )
