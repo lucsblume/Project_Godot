@@ -33,6 +33,7 @@ __meta__ = {
 }
 
 [node name="ProgressBar" type="ProgressBar" parent="StaminaBar2/Control"]
+visible = false
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 329.0
@@ -45,6 +46,7 @@ value = 1.0
 percent_visible = false
 
 [node name="SpriteBar" type="Sprite" parent="StaminaBar2/Control"]
+visible = false
 position = Vector2( 152.97, 91.6823 )
 scale = Vector2( 0.450597, 0.376071 )
 texture = ExtResource( 2 )

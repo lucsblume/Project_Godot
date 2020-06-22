@@ -102,7 +102,6 @@ margin_right = 1022.0
 margin_bottom = 597.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Margin"]
-editor/display_folded = true
 margin_right = 1022.0
 margin_bottom = 597.0
 
@@ -110,7 +109,6 @@ margin_bottom = 597.0
 margin_bottom = 597.0
 
 [node name="Game" parent="Margin/HBoxContainer" instance=ExtResource( 2 )]
-editor/display_folded = true
 
 [node name="stamina" type="Sprite" parent="Margin/HBoxContainer/Game"]
 position = Vector2( 40.6401, 93.3751 )
@@ -149,6 +147,7 @@ scale = Vector2( 0.32396, 0.564603 )
 texture = ExtResource( 4 )
 
 [node name="SpriteAuxAnglo2" type="Sprite" parent="Margin/HBoxContainer"]
+visible = false
 modulate = Color( 0.913725, 0.298039, 0.298039, 1 )
 position = Vector2( 1114.71, 186.569 )
 scale = Vector2( 0.322168, 0.564603 )
@@ -162,6 +161,7 @@ scale = Vector2( 0.322054, 0.564603 )
 texture = ExtResource( 4 )
 
 [node name="SpriteAuxRpm2" type="Sprite" parent="Margin/HBoxContainer"]
+visible = false
 modulate = Color( 0.913725, 0.298039, 0.298039, 1 )
 position = Vector2( 1114.51, 244.569 )
 scale = Vector2( 0.321103, 0.564603 )
@@ -169,14 +169,15 @@ texture = ExtResource( 4 )
 flip_h = true
 
 [node name="Game2" parent="Margin/HBoxContainer" instance=ExtResource( 5 )]
-editor/display_folded = true
 
 [node name="stamina2" type="Sprite" parent="Margin/HBoxContainer/Game2"]
+visible = false
 position = Vector2( 1239.3, 92.1162 )
 scale = Vector2( 0.556, 0.556 )
 texture = ExtResource( 3 )
 
 [node name="StaminaLabel2" type="Label" parent="Margin/HBoxContainer/Game2"]
+visible = false
 margin_left = 1105.0
 margin_top = 92.411
 margin_right = 1200.0
@@ -187,6 +188,7 @@ align = 1
 valign = 1
 
 [node name="LabelAngle2" type="Label" parent="."]
+visible = false
 margin_left = 1151.23
 margin_top = 154.661
 margin_right = 1199.23
@@ -223,6 +225,7 @@ margin_bottom = 224.25
 script = ExtResource( 10 )
 
 [node name="LabelRpm2" type="Label" parent="."]
+visible = false
 margin_left = 1152.99
 margin_top = 213.504
 margin_right = 1197.99
@@ -264,6 +267,7 @@ texture = ExtResource( 13 )
 
 [node name="SliderAngulo2" type="HSlider" parent="."]
 editor/display_folded = true
+visible = false
 margin_left = 1218.0
 margin_top = 138.0
 margin_right = 1441.0
@@ -339,6 +343,7 @@ texture = ExtResource( 15 )
 
 [node name="SliderRpm2" type="HSlider" parent="."]
 editor/display_folded = true
+visible = false
 margin_left = 1218.0
 margin_top = 197.0
 margin_right = 1425.0
@@ -414,11 +419,13 @@ text = "VIDA"
 [node name="LifeBar2" parent="." instance=ExtResource( 22 )]
 
 [node name="health2" type="Sprite" parent="LifeBar2"]
+visible = false
 position = Vector2( 1239, 32 )
 scale = Vector2( 0.218, 0.218 )
 texture = ExtResource( 21 )
 
 [node name="VidaLabelChar2" type="Label" parent="LifeBar2"]
+visible = false
 margin_left = 1108.0
 margin_top = 32.0
 margin_right = 1182.0
