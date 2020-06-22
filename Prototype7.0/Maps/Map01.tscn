@@ -492,15 +492,15 @@ position = Vector2( -15224.3, 0 )
 texture = ExtResource( 12 )
 flip_v = true
 
-[node name="Cabeçalho" type="Sprite" parent="."]
-position = Vector2( 650.581, 14.3465 )
+[node name="BackgroundTop" type="Sprite" parent="."]
+position = Vector2( 713.581, 14.3465 )
 scale = Vector2( 0.318097, 0.245553 )
 texture = ExtResource( 13 )
 
 [node name="LabelScaleHorizontal" type="Label" parent="."]
-margin_left = 353.942
+margin_left = 416.942
 margin_top = 2.00668
-margin_right = 800.942
+margin_right = 863.942
 margin_bottom = 71.0067
 custom_fonts/font = SubResource( 29 )
 custom_colors/font_color = Color( 0.172549, 1, 0, 1 )
@@ -508,9 +508,9 @@ align = 1
 uppercase = true
 
 [node name="X" type="Label" parent="."]
-margin_left = 304.942
+margin_left = 367.942
 margin_top = 2.00668
-margin_right = 751.942
+margin_right = 814.942
 margin_bottom = 71.0067
 custom_fonts/font = SubResource( 29 )
 custom_colors/font_color = Color( 1, 0.0509804, 0.0509804, 1 )
@@ -519,9 +519,9 @@ align = 1
 uppercase = true
 
 [node name="Divisa" type="Label" parent="."]
-margin_left = 367.559
+margin_left = 430.559
 margin_top = -6.63907
-margin_right = 814.559
+margin_right = 877.559
 margin_bottom = 62.3609
 rect_scale = Vector2( 1.25737, 1.25737 )
 custom_fonts/font = SubResource( 29 )
@@ -531,9 +531,9 @@ align = 1
 uppercase = true
 
 [node name="LabelScaleVertical" type="Label" parent="."]
-margin_left = 558.68
+margin_left = 621.68
 margin_top = 1.88116
-margin_right = 1005.68
+margin_right = 1068.68
 margin_bottom = 70.8812
 custom_fonts/font = SubResource( 29 )
 custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
@@ -541,9 +541,9 @@ align = 1
 uppercase = true
 
 [node name="Y" type="Label" parent="."]
-margin_left = 504.68
+margin_left = 567.68
 margin_top = 1.88116
-margin_right = 951.68
+margin_right = 1014.68
 margin_bottom = 70.8812
 custom_fonts/font = SubResource( 29 )
 custom_colors/font_color = Color( 1, 0.0509804, 0.0509804, 1 )

@@ -25,7 +25,7 @@ onready var anim = get_node("Settings/AnimationPlayer")
 onready var animP2 = get_node("SettingsP2/AnimationPlayer")
 
 func _ready():
-	
+	$BackgroundTop.visible = false
 	$Divisa.visible = false
 	$ReguaHorizontal.visible = false
 	$LinhaPontilhadaH.visible = false
@@ -67,6 +67,7 @@ func set_camera_limits():
 
 func _input(event):
 	if event.is_action_pressed("VisibleHorizontal"):  #APERTE H
+		$BackgroundTop.visible = not $BackgroundTop.visible
 		$Divisa.visible = not $Divisa.visible
 		$ReguaVertical.visible = not $ReguaVertical.visible
 		$ReguaVertical2.visible = not $ReguaVertical2.visible
