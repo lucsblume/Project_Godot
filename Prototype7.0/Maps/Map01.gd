@@ -35,6 +35,7 @@ func _ready():
 	$LabelScaleHorizontal.visible =false
 	$LabelScaleVertical.visible = false
 	set_camera_limits()
+	
 
 	$Settings/Ball1.connect("is_on_floor", self, "isTrue")
 	$SettingsP2/Ball2.connect("is_on_floorP2", self, "isTrueP2")

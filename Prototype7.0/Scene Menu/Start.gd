@@ -18,3 +18,4 @@ func _on_Start_pressed():#editando as cores quando o botão for pressionado
 	$ButtonSprite.modulate.g = 0.5
 	$ButtonSprite.modulate.b = 0.5
 	get_tree().change_scene("res://Maps/Map01.tscn") #ao clicar no botão ele vai pegar todo o projeto e muda a cena para a cena escolhida
+	

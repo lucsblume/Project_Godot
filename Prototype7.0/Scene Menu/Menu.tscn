@@ -56,7 +56,6 @@ Catapults"
 align = 1
 
 [node name="Start" type="Button" parent="."]
-editor/display_folded = true
 margin_left = 485.159
 margin_top = 247.383
 margin_right = 765.159
@@ -82,7 +81,6 @@ custom_fonts/font = SubResource( 4 )
 text = "COMEÇAR"
 
 [node name="Sair" type="Button" parent="."]
-editor/display_folded = true
 margin_left = 486.15
 margin_top = 566.862
 margin_right = 766.15
@@ -112,7 +110,6 @@ stream = ExtResource( 6 )
 script = ExtResource( 7 )
 
 [node name="Tutorial" type="Button" parent="."]
-editor/display_folded = true
 margin_left = 485.446
 margin_top = 355.67
 margin_right = 758.446
@@ -140,7 +137,6 @@ custom_fonts/font = SubResource( 4 )
 text = "TUTORIAL"
 
 [node name="Mecânica" type="Button" parent="."]
-editor/display_folded = true
 margin_left = 489.413
 margin_top = 461.125
 margin_right = 762.413

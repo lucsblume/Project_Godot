@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://New Stamina/stamina-meter.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 623.798, 341.038 )
+script = ExtResource( 1 )

@@ -40,6 +40,10 @@ custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 custom_fonts/font = SubResource( 4 )
 value = 1.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SpriteBar" type="Sprite" parent="Control"]
 position = Vector2( 152.97, 91.6823 )

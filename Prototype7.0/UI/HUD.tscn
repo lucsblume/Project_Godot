@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://UI/HUD.gd" type="Script" id=1]
 [ext_resource path="res://BarraDeStamina e label/Game.tscn" type="PackedScene" id=2]
@@ -62,37 +62,34 @@ font_data = ExtResource( 6 )
 bg_color = Color( 1, 0.984314, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.937255, 0.156863, 0.156863, 1 )
+bg_color = Color( 1, 0.984314, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 1, 0.984314, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 1, 0.984314, 0, 1 )
-
-[sub_resource type="DynamicFontData" id=11]
+[sub_resource type="DynamicFontData" id=10]
 font_path = "res://Fonte/consolaz.ttf"
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=11]
 size = 80
 outline_size = 3
 use_filter = true
 extra_spacing_char = 6
-font_data = SubResource( 11 )
+font_data = SubResource( 10 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=12]
 size = 36
 use_filter = true
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFontData" id=14]
+[sub_resource type="DynamicFontData" id=13]
 font_path = "res://Fonte/consolaz.ttf"
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=14]
 size = 22
 use_filter = true
 extra_spacing_char = 6
-font_data = SubResource( 14 )
+font_data = SubResource( 13 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -246,14 +243,12 @@ valign = 1
 script = ExtResource( 12 )
 
 [node name="SliderAngulo" type="HSlider" parent="."]
-editor/display_folded = true
 margin_left = 62.0
 margin_top = 139.0
 margin_right = 284.0
 margin_bottom = 155.0
 rect_scale = Vector2( 0.803397, 0.803397 )
 custom_styles/grabber_area = SubResource( 7 )
-custom_styles/focus = SubResource( 8 )
 max_value = 360.0
 ticks_on_borders = true
 __meta__ = {
@@ -266,7 +261,6 @@ scale = Vector2( 0.553385, 0.546858 )
 texture = ExtResource( 13 )
 
 [node name="SliderAngulo2" type="HSlider" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 1218.0
 margin_top = 138.0
@@ -274,7 +268,6 @@ margin_right = 1441.0
 margin_bottom = 157.0
 rect_scale = Vector2( -0.796613, 0.803397 )
 custom_styles/grabber_area = SubResource( 7 )
-custom_styles/focus = SubResource( 8 )
 max_value = 360.0
 ticks_on_borders = true
 
@@ -285,14 +278,13 @@ scale = Vector2( 0.553, -0.547 )
 texture = ExtResource( 13 )
 
 [node name="SliderRaio" type="HSlider" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 62.0
 margin_top = 192.337
 margin_right = 322.0
 margin_bottom = 209.337
 rect_scale = Vector2( 0.816785, 0.816785 )
-custom_styles/grabber_area = SubResource( 9 )
+custom_styles/grabber_area = SubResource( 8 )
 max_value = 50.0
 ticks_on_borders = true
 __meta__ = {
@@ -305,14 +297,13 @@ scale = Vector2( 0.574008, 0.57088 )
 texture = ExtResource( 14 )
 
 [node name="SliderRaio2" type="HSlider" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 954.0
 margin_top = 192.337
 margin_right = 1214.0
 margin_bottom = 209.337
 rect_scale = Vector2( -0.823215, 0.816785 )
-custom_styles/grabber_area = SubResource( 9 )
+custom_styles/grabber_area = SubResource( 8 )
 max_value = 50.0
 ticks_on_borders = true
 
@@ -323,13 +314,12 @@ scale = Vector2( 0.569524, -0.57088 )
 texture = ExtResource( 14 )
 
 [node name="SliderRpm" type="HSlider" parent="."]
-editor/display_folded = true
 margin_left = 61.1281
 margin_top = 204.439
 margin_right = 288.128
 margin_bottom = 220.439
 rect_scale = Vector2( 0.782912, 0.782912 )
-custom_styles/grabber_area = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 9 )
 max_value = 4.0
 ticks_on_borders = true
 __meta__ = {
@@ -342,14 +332,13 @@ scale = Vector2( 0.553, 0.547 )
 texture = ExtResource( 15 )
 
 [node name="SliderRpm2" type="HSlider" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 1218.0
 margin_top = 197.0
 margin_right = 1425.0
 margin_bottom = 213.0
 rect_scale = Vector2( -0.857088, 0.782912 )
-custom_styles/grabber_area = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 9 )
 max_value = 4.0
 ticks_on_borders = true
 
@@ -368,7 +357,7 @@ margin_left = 495.133
 margin_top = 320.0
 margin_right = 789.133
 margin_bottom = 401.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "PAUSED"
@@ -396,7 +385,7 @@ margin_top = 9.83365
 margin_right = 215.166
 margin_bottom = 50.8336
 rect_scale = Vector2( 1.40061, 1.40061 )
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 text = "SAIR"
 align = 1
 valign = 1
@@ -413,7 +402,7 @@ margin_left = 96.6732
 margin_top = 29.6732
 margin_right = 170.673
 margin_bottom = 56.6732
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 14 )
 text = "VIDA"
 
 [node name="LifeBar2" parent="." instance=ExtResource( 22 )]
@@ -430,7 +419,7 @@ margin_left = 1108.0
 margin_top = 32.0
 margin_right = 1182.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 14 )
 text = "VIDA"
 align = 1
 valign = 1
