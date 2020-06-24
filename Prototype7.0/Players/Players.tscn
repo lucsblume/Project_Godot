@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Players/Players.gd" type="Script" id=1]
 [ext_resource path="res://Jogadores/Player.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Players/Ball1.gd" type="Script" id=8]
 [ext_resource path="res://Players/Trail.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Players/Area2D.gd" type="Script" id=10]
+[ext_resource path="res://New Stamina/Stamina.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonte/arialbi.ttf"
@@ -108,11 +109,17 @@ margin_bottom = 177.019
 custom_fonts/font = SubResource( 2 )
 align = 1
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 visible = false
 position = Vector2( -46.0273, 98.3722 )
 polygon = PoolVector2Array( -11.4895, -0.863495, -13.5328, -0.863495, -13.5328, 17.8673, 1.11127, 17.8673, 2.76755, 21.105, 5.96191, 23.7438, 10.8229, 24.6465, 16.2394, 22.4244, 19.1704, 18.4162, 68.7094, 18.4162, 70.6475, 19.7856, 73.3558, 22.4938, 79.6056, 24.0216, 85.4388, 21.5216, 88.2947, 18.2079, 103.961, 18.2079, 103.961, -1.88519 )
+
+[node name="Node2D" parent="Player" instance=ExtResource( 11 )]
+position = Vector2( -103.433, 0.318176 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AnimationSprite = SubResource( 3 )

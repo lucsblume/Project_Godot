@@ -4,4 +4,5 @@
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 623.798, 341.038 )
+scale = Vector2( 0.281397, 0.281397 )
 script = ExtResource( 1 )
