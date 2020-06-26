@@ -18,8 +18,8 @@ func get_input():
 	var left = Input.is_action_pressed('Left')
 	var jump = Input.is_action_pressed('Up')
 	
-	if Game_Manager.stamina_p2 <= 0: #checando valor da stamina
-		return
+	#if Game_Manager.stamina_p2 <= 0: #checando valor da stamina    ########### APAGAR ######
+		#return                                                     ########### APAGAR ######
 	
 	if jump and is_on_floor():
 		#print("Is on Floor")
@@ -42,3 +42,7 @@ func _physics_process(delta):
 	if jumping and is_on_floor():
 		jumping = false
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	if get_node("Stamina2").stamina == 0:
+		run_speed = 0
+		jump_speed = 0

@@ -24,7 +24,7 @@ func draw_stamina_meter(pos, size, width, current, color):
 	
 
 func _process(delta):
-	if Input.is_action_pressed("ui_up")  or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("Up") or Input.is_action_pressed("Right") or Input.is_action_pressed("Left"):
 		stamina -= 1
 	
 	stamina = clamp(stamina,0,100) #retorna um valor não inferior ao minimo e não superior ao maximo
@@ -34,6 +34,6 @@ func _process(delta):
 	
 	print(stamina)
 	
-	if Input.is_action_pressed("ui_up")  or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("Up") or Input.is_action_pressed("Right") or Input.is_action_pressed("Left"):
 		update()
 	
