@@ -1,7 +1,7 @@
 extends Node2D
 
 var stamina = 100
-var current_angle = -1.6 #1.6
+var current_angle = -1.6 
  
 var min_angle = -1.6
 var max_angle = 4.7
@@ -24,13 +24,7 @@ func draw_stamina_meter(pos, size, width, current, color):
 	
 
 func _process(delta):
-	if Input.is_action_pressed("ui_up"):
-		stamina += 1
-	if Input.is_action_pressed("ui_down"):
-		stamina -= 1
-	if Input.is_action_pressed("ui_right"):
-		stamina -= 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		stamina -= 1
 	
 	stamina = clamp(stamina,0,100) #retorna um valor não inferior ao minimo e não superior ao maximo
@@ -42,3 +36,4 @@ func _process(delta):
 	
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		update()
+	
